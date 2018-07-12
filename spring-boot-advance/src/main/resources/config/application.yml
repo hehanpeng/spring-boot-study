@@ -1,0 +1,10 @@
+spring:
+  profiles:
+    active: sit
+  thymeleaf:
+    mode: HTML
+  devtools:
+    restart:
+      trigger-file: .trigger
+#  mvc:
+#    static-path-pattern: /static/**

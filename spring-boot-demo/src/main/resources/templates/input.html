@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link th:href="@{/css/bootstrap.min.css}" href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <title>书单详情</title>
+</head>
+<body>
+<div class="container" style="max-width: 700px;margin-top: 50px;">
+    <div class="well">
+        <form action="/books" th:action="@{/books}" th:object="${book}" method="post">
+            <input type="hidden" th:value="*{id}" name="id">
+            <div class="form-group">
+                <lable for="nameId">书名</lable>
+                <input type="text" name="name" id="nameId" class="form-control" th:value="*{name}">
+            </div>
+            <div class="form-group">
+                <lable for="authorId">作者</lable>
+                <input type="text" name="author" id="authorId" class="form-control" th:field="*{author}">
+            </div>
+            <div class="form-group">
+                <lable for="descriptionId">描述</lable>
+                <input type="text" name="description" id="descriptionId" class="form-control" th:value="*{description}">
+            </div>
+            <div class="form-group">
+                <lable for="statusId">状态</lable>
+                <select name="status" id="statusId" class="form-control">
+                    <option value="0" th:selected="(*{status} == '0')">未读</option>
+                    <option value="1" th:selected="(*{status} == '1')">在读</option>
+                    <option value="2" th:selected="(*{status} == '2')">已读</option>
+                </select>
+            </div>
+            <p class="text-center">
+                <button type="button" class="btn btn-default" onclick="history.go(-1)">返回</button>
+                <button type="submit" class="btn btn-primary">提交</button>
+            </p>
+        </form>
+    </div>
+</div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script th:src="@{/js/bootstrap.min.js}" src="../static/js/bootstrap.min.js"></script>
+</html>

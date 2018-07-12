@@ -1,0 +1,17 @@
+##json结构超类
+server:
+  port: 8081
+#  servlet:
+#    context-path: /api
+logging:
+  level:
+    root: warn
+    com.hehanpeng: info
+  file: logs/pro.log
+
+###自定义属性
+#book:
+#  name: 射雕英雄传
+#  author: 金庸
+#  isbn: ${random.uuid}
+#  description: ${book.name},属于武侠小说
